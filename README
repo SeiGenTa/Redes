@@ -4,4 +4,9 @@ Comando para iniciar un codigo de python
 E:\Git\Entornos/Scripts/python.exe
 
 /////////////PIP instalados en entorno virtual//////////////
-pip install sockets
+pip install sockets="23.1"
+
+//Comando para Garuda PCFIJO//
+source ~/Desktop/Git/Env/redes/bin/activate (Activar Env)
+
+~/Desktop/Git/Env/redes/bin/python (Iniciar codigo)
