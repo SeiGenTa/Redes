@@ -39,10 +39,10 @@ def proxy(conn, host, portout, log):
 
     print('Cliente conectado')
 
-# copy_sock() corre en ambos threads, uno de conn->conn2 y otro de conn2->conn
-    newthread1 = threading.Thread(target=copy_sock, daemon=True, args=(conn,conn2,log)) # el flag daemon es para que muera si muere el otro 
+    # copy_sock() corre en ambos threads, uno de conn->conn2 y otro de conn2->conn
+    newthread1 = threading.Thread(target=copy_sock, daemon=True, args=(conn,conn2,f"{log}_1")) # el flag daemon es para que muera si muere el otro 
     newthread1.start()
-    copy_sock(conn2, conn, log)
+    copy_sock(conn2, conn, f"{log}_2")
     print('Cliente desconectado')
 
 
