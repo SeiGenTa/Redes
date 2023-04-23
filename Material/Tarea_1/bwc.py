@@ -97,12 +97,31 @@ def main():
     cantReciv = sendE(cantBytes)
     if cantReciv == 0:
         print("hubo un problema al recibir las respuestas")
+        try:
+            arch = open(name,"x")
+            arch.write(f"bytes;Tamaño en bytes;Recibido en bytes;tiempo tardado;bw \n")
+        except:
+            arch = open(name,"a")
+        arch.write(f"size;NULO;NULO;NULO;NULO \n")
+        arch.close()
         sys.exit(1)
     
     tiempo_tardo = time_end-time_init
+    bw = (int(cantReciv)/tiempo_tardo)/(1024*1024)
+    print(f"bytes enviados: {byteT}, bytes recibidos: {cantReciv}, tiempo:{tiempo_tardo}, bw={bw}")
     
-    print(f"bytes enviados: {byteT}, bytes recibidos: {cantReciv}, tiempo:{tiempo_tardo}, bw={(int(cantReciv)/tiempo_tardo)/(1024*1024)}")
+    name = "data_mejora.csv"
+    try:
+        arch = open(name,"x")
+        arch.write(f"bytes;Tamaño en bytes;Recibido en bytes;tiempo tardado;bw \n")
+    except:
+        arch = open(name,"a")
     
+    datos = [size,byteT,cantReciv,str(tiempo_tardo),bw]
+    arch.write(f"{datos[0]};{datos[1]};{datos[2]};{datos[3]};{datos[4]} \n")
+    arch.close()
+    
+    return datos
     
 main()
     
