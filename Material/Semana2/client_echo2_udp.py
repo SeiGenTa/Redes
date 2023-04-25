@@ -12,9 +12,12 @@ if s is None:
     print('could not open socket')
     sys.exit(1)
 
+s.send(b'hola')
+s.recv(1024)
+
 for line in sys.stdin:
     s.send(line.encode())
-    data=s.recv(4096).decode()
+    data=(s.recv(4096)).decode()
     print(data, end = '')
 
 s.close()

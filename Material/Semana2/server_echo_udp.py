@@ -8,6 +8,7 @@ if s is None:
     sys.exit(1)
 while True:
     data, addr = s.recvfrom(1024)
+    print('a')
     if not data: break
     s.sendto(data, addr)
 

@@ -8,5 +8,7 @@ pip install sockets="23.1"
 
 //Comando para Garuda PCFIJO//
 source ~/Desktop/Git/Env/redes/bin/activate (Activar Env)
+source ~/Desktop/Git/ENV/redes_env/bin/activate
 
-~/Desktop/Git/Env/redes/bin/python (Iniciar codigo)
+~/Desktop/Git/Env/redes/bin/python (Iniciar codigo) (PCFIJO)
+~/Desktop/Git/ENV/redes_env/bin/python 
