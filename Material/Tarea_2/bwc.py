@@ -91,10 +91,11 @@ def main():
     
     byteT = sendD(cantBytes) #Ya sabemos sendD nos retorna la cantidad de bytes que se enviaron
     
+    
+    cantReciv = sendE(cantBytes)
     time_end = time.time() #Terminamos el proceso de envio de informacion
     #en este punto ya se enviaron todos los envios y esperaremos a que el servidor retorne su respuesta a que termino 
     #el envio de archivos (envio E)
-    cantReciv = sendE(cantBytes)
     if cantReciv == 0:
         print("hubo un problema al recibir las respuestas")
         try:
