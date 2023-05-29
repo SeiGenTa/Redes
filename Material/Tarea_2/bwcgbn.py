@@ -93,6 +93,7 @@ def main(size, timeout, loss, win_size, filein, host, port):
         return "error_1"
     
     tries = 0
+    s.settimeout(TIMEOUT/1000.0)
     while tries < MAX_TRIES:
         sizeChar = to_char(size)
         pack = bytearray([ord('C'),ord('0'),ord('0')])+sizeChar

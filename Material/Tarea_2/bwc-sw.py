@@ -126,7 +126,7 @@ while True:
         if not ack or ack[0] != ord('A') or from_seq(ack[1],ack[2]) != cnt: # incluye timeout
             print('falla ack')
         else:
-            print(f'Recibo ACK: {cnt}')
+            print(f'Recibo ACK: {ack}')
             cnt = (cnt+1) % MAX_SEQ
             break
         tries = tries+1
